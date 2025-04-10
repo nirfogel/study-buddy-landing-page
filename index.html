@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Buddy - AI Powered Study Assistant</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    function setLanguage(lang) {
+      const content = lang === 'he' ? he : en;
+      document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+      document.getElementById('tagline').innerText = content.tagline;
+      document.getElementById('subtitle').innerText = content.subtitle;
+      document.getElementById('cta').innerText = content.cta;
+      document.getElementById('cta2').innerText = content.cta;
+      document.getElementById('login').innerText = content.login;
+      document.getElementById('features-title').innerText = content.featuresTitle;
+      document.getElementById('testimonials-title').innerText = content.testimonialsTitle;
+      document.getElementById('ready-title').innerText = content.readyTitle;
+      document.getElementById('footer').innerText = content.footer;
+      document.getElementById('feature1-title').innerText = content.features[0].title;
+      document.getElementById('feature1-desc').innerText = content.features[0].desc;
+      document.getElementById('feature2-title').innerText = content.features[1].title;
+      document.getElementById('feature2-desc').innerText = content.features[1].desc;
+      document.getElementById('feature3-title').innerText = content.features[2].title;
+      document.getElementById('feature3-desc').innerText = content.features[2].desc;
+      document.getElementById('feature4-title').innerText = content.features[3].title;
+      document.getElementById('feature4-desc').innerText = content.features[3].desc;
+      document.getElementById('feature5-title').innerText = content.features[4].title;
+      document.getElementById('feature5-desc').innerText = content.features[4].desc;
+      document.getElementById('testimonial1').innerText = '"' + content.testimonials[0].text + '" - ' + content.testimonials[0].name;
+      document.getElementById('testimonial2').innerText = '"' + content.testimonials[1].text + '" - ' + content.testimonials[1].name;
+      document.getElementById('testimonial3').innerText = '"' + content.testimonials[2].text + '" - ' + content.testimonials[2].name;
+    }
+
+    const en = {
+      tagline: "Study Smarter, Not Harder!",
+      subtitle: "The ultimate study companion for students who want to ace their exams without the all-nighters.",
+      cta: "Get Started Now",
+      login: "Already have an account? Log in",
+      featuresTitle: "Why Study Buddy?",
+      testimonialsTitle: "What Students Say",
+      readyTitle: "Ready to Ace Your Exams?",
+      footer: "© 2023 Study Buddy - Make studying fun again!",
+      features: [
+        { title: "Smart Notes", desc: "Upload your study materials and let AI do the heavy lifting." },
+        { title: "Custom Quizzes", desc: "Generate personalized quizzes to test your knowledge." },
+        { title: "Study Together", desc: "Share exams with friends and compare progress." },
+        { title: "AI Tutor", desc: "Get instant help when you're stuck on difficult topics." },
+        { title: "WhatsApp Integration", desc: "Study on the go with our WhatsApp bot." }
+      ],
+      testimonials: [
+        { name: "Alex", text: "Study Buddy helped me pass my Bio final when I thought I was doomed!" },
+        { name: "Maya", text: "The AI quizzes are like having a personal tutor that never gets tired!" },
+        { name: "Daniel", text: "Sharing notes with classmates has never been easier. We all got A's!" }
+      ]
+    };
+
+    const he = {
+      tagline: "ללמוד חכם יותר, לא קשה יותר!",
+      subtitle: "חבר הלימודים האולטימטיבי לסטודנטים שרוצים להצליח במבחנים ללא לילות לבנים.",
+      cta: "התחילו עכשיו",
+      login: "כבר יש לכם חשבון? התחברו",
+      featuresTitle: "למה Study Buddy?",
+      testimonialsTitle: "מה אומרים הסטודנטים?",
+      readyTitle: "מוכנים להתחיל?",
+      footer: "© 2023 באדי ללימודים - הופכים את הלימוד לכיף שוב!",
+      features: [
+        { title: "הערות חכמות", desc: "העלו את חומרי הלימוד שלכם ותנו ל-AI לעשות את העבודה הקשה." },
+        { title: "בחנים מותאמים אישית", desc: "צרו בחנים מותאמים אישית לבדיקת הידע שלכם." },
+        { title: "לימוד משותף", desc: "שתפו מבחנים עם חברים והשוו התקדמות." },
+        { title: "מורה AI", desc: "קבלו עזרה מיידית כשאתם נתקעים בנושאים קשים." },
+        { title: "אינטגרציה עם וואטסאפ", desc: "למדו בדרך עם בוט הווטסאפ שלנו." }
+      ],
+      testimonials: [
+        { name: "אלכס", text: "באדי ללימודים עזר לי לעבור את המבחן הסופי בביולוגיה כשחשבתי שאני אבוד!" },
+        { name: "מאיה", text: "הבחנים של ה-AI הם כמו מורה פרטי שלעולם לא מתעייף!" },
+        { name: "דניאל", text: "שיתוף הערות עם חברים לכיתה מעולם לא היה קל יותר. כולנו קיבלנו A!" }
+      ]
+    };
+  </script>
+</head>
+<body onload="setLanguage(navigator.language.startsWith('he') ? 'he' : 'en')">
+  <div class="header">
+    <div class="navbar">
+      <div class="logo"><span>StudyBuddy</span></div>
+      <div class="navLinks">
+        <button onclick="setLanguage(document.documentElement.dir === 'rtl' ? 'en' : 'he')" class="langSwitch">עברית</button>
+        <a href="https://app--study-buddy-8c1c74fc.base44.app" class="loginBtn" id="login">Log In</a>
+      </div>
+    </div>
+    <div class="hero">
+      <h1 class="title" id="tagline">...</h1>
+      <p class="subtitle" id="subtitle">...</p>
+      <a href="https://app--study-buddy-8c1c74fc.base44.app" class="ctaButton" id="cta">...</a>
+    </div>
+  </div>
+
+  <section class="features">
+    <h2 id="features-title">...</h2>
+    <div class="featureGrid">
+      <div class="featureCard">
+        <div class="featureIcon">📘</div>
+        <h3 id="feature1-title">...</h3>
+        <p id="feature1-desc">...</p>
+      </div>
+      <div class="featureCard">
+        <div class="featureIcon">💻</div>
+        <h3 id="feature2-title">...</h3>
+        <p id="feature2-desc">...</p>
+      </div>
+      <div class="featureCard">
+        <div class="featureIcon">👥</div>
+        <h3 id="feature3-title">...</h3>
+        <p id="feature3-desc">...</p>
+      </div>
+      <div class="featureCard">
+        <div class="featureIcon">🤖</div>
+        <h3 id="feature4-title">...</h3>
+        <p id="feature4-desc">...</p>
+      </div>
+      <div class="featureCard">
+        <div class="featureIcon">📱</div>
+        <h3 id="feature5-title">...</h3>
+        <p id="feature5-desc">...</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2 id="testimonials-title">...</h2>
+    <div class="testimonialGrid">
+      <div class="testimonialCard" id="testimonial1"></div>
+      <div class="testimonialCard" id="testimonial2"></div>
+      <div class="testimonialCard" id="testimonial3"></div>
+    </div>
+  </section>
+
+  <section class="callToAction">
+    <h2 id="ready-title">...</h2>
+    <a href="https://app--study-buddy-8c1c74fc.base44.app" class="ctaButton" id="cta2">...</a>
+  </section>
+
+  <footer class="footer" id="footer">...</footer>
+</body>
+</html>
